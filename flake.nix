@@ -15,7 +15,7 @@
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
             scala_2_13
-            jdk11
+            temurin-bin-11
             sbt
             nodejs_20
           ];
