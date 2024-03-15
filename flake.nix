@@ -14,11 +14,16 @@
       {
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
+            zulu11
             scala_2_13
-            temurin-bin-11
             sbt
             nodejs_20
           ];
+
+          shellHook = ''
+            echo "Welcome to Nix Shell"
+            export PATH="${pkgs.zulu11}/bin:$PATH"
+          '';
         };
       }
     );
