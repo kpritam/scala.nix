@@ -12,7 +12,7 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in
       {
-        devShell = pkgs.mkShell {
+        devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
             zulu11
             scala_2_13
@@ -23,6 +23,7 @@
           shellHook = ''
             echo "Welcome to Nix Shell"
             export PATH="${pkgs.zulu11}/bin:$PATH"
+            alias sbt="sbt -java-home ${pkgs.zulu11}"
           '';
         };
       }
