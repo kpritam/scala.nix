@@ -23,7 +23,7 @@
           shellHook = ''
             echo "Welcome to Nix Shell"
             export PATH="${pkgs.zulu11}/bin:$PATH"
-            alias sbt="sbt -java-home ${pkgs.zulu11}"
+            alias sbt "sbt -java-home ${pkgs.zulu11}"
           '';
         };
       }
